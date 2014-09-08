@@ -1,0 +1,17 @@
+# X coordinate of the segment start
+float32 x1
+# Y coordinate of the segment start
+float32 y1
+# X coordinate of the segment end
+float32 x2
+# Y coordinate of the segment end
+float32 y2
+# Segment width (line thickness)
+float32 width
+# Threshold for occupancy test
+# Cells in OccupancyGrid message with values greater or equal than the threshold
+# will be considered as occupied
+int8 threshold
+---
+# Occupancy test result (true means free)
+bool free

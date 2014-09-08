@@ -1,0 +1,5 @@
+# Robot pose to test
+geometry_msgs/PoseStamped pose
+---
+# Likelihood of the pose (in the 0 to 1 range)
+float32 likelihood

@@ -1,0 +1,7 @@
+# Initial pose of the path
+geometry_msgs/Pose2D start
+# Target pose of the path
+geometry_msgs/Pose2D end
+---
+# The planned path
+nav_msgs/Path path

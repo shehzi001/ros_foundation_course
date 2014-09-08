@@ -1,0 +1,15 @@
+# Array of beams, where each beam is defined by its origin (x, y)
+# and direction (theta, in radians).
+geometry_msgs/Pose2D[] beams
+# Threshold for occupancy test.
+# Cells in OccupancyGrid message with values greater or equal than the threshold
+# will be considered as occupied
+int8 threshold
+---
+# Each beam from the request will be traced through the map until
+# it either hits an occupied point (cell), or leaves the boundary
+# of the map. In the latter case the distance is assumed to be
+# positive infinity, and point coordinates are quiet NaNs.
+# Note: z coordinates of the points will be left uninitialized.
+geometry_msgs/Point[] points
+float64[] distances
