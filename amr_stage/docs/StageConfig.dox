@@ -1,0 +1,6 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~speed" : \b [double] Simulation speed min: 1.0, default: 20.0, max: 100.0
+
