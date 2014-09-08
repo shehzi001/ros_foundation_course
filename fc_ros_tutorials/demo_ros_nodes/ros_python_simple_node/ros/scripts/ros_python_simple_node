@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+"""
+This script initilizes simple python node.
+"""
+#-*- encoding: utf-8 -*-
+__author__ = 'shehzad ahmed'
+import rospy
+
+def initlize_node():
+    '''
+    Initilize node and spin which simply keeps python 
+    from exiting until this node is stopped
+    '''
+    rospy.init_node('ros_python_simple_node', anonymous=False)
+    rospy.loginfo("ros_python_simple_node is now running")
+    rospy.spin()
+
+if __name__ == '__main__':
+    initlize_node()
