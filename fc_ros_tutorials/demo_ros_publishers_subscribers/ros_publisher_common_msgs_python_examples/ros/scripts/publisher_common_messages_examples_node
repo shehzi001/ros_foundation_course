@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+"""
+This script is a simple python node which imports
+source code of common_messages_examples.
+"""
+#-*- encoding: utf-8 -*-
+__author__ = 'shehzad ahmed'
+
+import ros_publisher_common_msgs_python_examples_ros.publisher_common_messages_examples
+
+if __name__ == '__main__':
+    ros_publisher_common_msgs_python_examples_ros.publisher_common_messages_examples.main()
