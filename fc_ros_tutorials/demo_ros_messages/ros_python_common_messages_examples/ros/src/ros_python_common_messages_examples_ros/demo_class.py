@@ -21,7 +21,15 @@ from trajectory_msgs.msg import JointTrajectoryPoint
 
 class DemoClass():
     def __init__(self):
+        self.prepare_common_msgs()
+
+    def prepare_common_msgs(self):
         self.prepare_geometry_msg()
+        self.prepare_actionlib_msg()
+        self.prepare_odometry_msg()
+        self.prepare_laserscan_msg()
+        self.prepare_range_msg()
+        self.prepare_joint_trajectoy_point_msg()
 
     def prepare_geometry_msg(self):
         '''
@@ -89,14 +97,15 @@ class DemoClass():
         goal_id_msg.id = "ACTIVE"
 
     def prepare_odometry_msg(self):
-
+        '''
+        Fill odometry message
+        '''
         odometry_msg = Odometry()
 
         pose = PoseWithCovariance();
         twist = TwistWithCovariance();
 
     def prepare_laserscan_msg(self):
-
         '''
         Fill laser scan message
         '''
@@ -108,7 +117,8 @@ class DemoClass():
         ranges = []
         intensities = []
         count = 0
-
+        i = 0
+        
         #generate some fake data for laser scan
         while (i < num_readings):
             ranges.append(count)
@@ -131,14 +141,14 @@ class DemoClass():
 
     def prepare_range_msg(self):
         '''
-        Fill laser scan message
+        Fill range message
         Please, do it your self for practice
         '''
         range_msg = Range()
 
-    def prepareJointTrajectoyPointMsg(self):
+    def prepare_joint_trajectoy_point_msg(self):
         '''
-        Fill laser scan message
+        Fill joint trajectory point message
         Please, do it your self for practice
         '''
         joint_traj_point_msg = JointTrajectoryPoint()
