@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     ros::init(argc, argv, "ros_cpp_simple_node");
 
     /**
-     * Initilization of node handle
+     * Starting the node
      **/
     ros::NodeHandle nh("~");
     
