@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Name of the display config that should be loaded, without path and extension.
+       The corresponding file has to be present in 'amr_ui/config' folder. -->
+  <arg name="config" default="default"/>
+
+  <!-- RViz node -->
+  <node pkg="rviz" type="rviz" name="rviz"
+        args="--display-config $(find amr_ui)/config/$(arg config).rviz"
+        required="true"/>
+
+  <!-- Ranges republishers for braitenberg sonars -->
+  <node pkg="amr_stage" type="ranges_republisher.py" name="braitenberg_republisher">
+        <remap from="ranges_in" to="sonar_braitenberg"/>
+        <remap from="ranges_out" to="sonar_braitenberg_discrete"/>
+  </node>
+
+  <!-- Ranges republishers for pioneer sonars.
+       RViz range display has problems buffering more than 12 range messages, therefore
+       we split into two topics and vizualize each one in a separate display. -->
+  <node pkg="amr_stage" type="ranges_republisher.py" name="pioneer_republisher_front">
+        <param name="filter_ids" value="0,1,2,3,4,5,6,7" type="str"/>
+        <remap from="ranges_in" to="sonar_pioneer"/>
+        <remap from="ranges_out" to="sonar_pioneer_discrete_front"/>
+  </node>
+  <node pkg="amr_stage" type="ranges_republisher.py" name="pioneer_republisher_rear">
+        <param name="filter_ids" value="8,9,10,11,12,13,14,15,16" type="str"/>
+        <remap from="ranges_in" to="sonar_pioneer"/>
+        <remap from="ranges_out" to="sonar_pioneer_discrete_rear"/>
+  </node>
+
+</launch>

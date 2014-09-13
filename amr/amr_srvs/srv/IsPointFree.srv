@@ -1,0 +1,13 @@
+# X coordinate of the point
+float32 x
+# Y coordinate of the point
+float32 y
+# Point diameter
+float32 diameter
+# Threshold for occupancy test
+# Cells in OccupancyGrid message with values greater or equal than the threshold
+# will be considered as occupied
+int8 threshold
+---
+# Occupancy test result (true means free)
+bool free

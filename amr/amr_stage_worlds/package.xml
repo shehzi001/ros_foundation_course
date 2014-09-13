@@ -1,0 +1,23 @@
+<package>
+  <name>amr_stage_worlds</name>
+  <version>1.0.0</version>
+  <description>amr_stage_worlds</description>
+  <maintainer email="alexander.hagg@inf.h-brs.de">Alexander Hagg</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/amr_stage_worlds</url>
+  <!-- <url type="bugtracker"></url> -->
+
+  <author>Alexander Hagg</author>
+
+  <!-- Dependencies which this package needs to build itself. -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Dependencies needed to compile this package. -->
+
+  <!-- Dependencies needed after this package is compiled. -->
+
+  <!-- Dependencies needed only for running tests. -->
+
+</package>

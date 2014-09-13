@@ -1,0 +1,7 @@
+\subsubsection usage Usage
+\verbatim
+<node name="stage" pkg="amr_stage" type="stage">
+  <param name="speed" type="double" value="20.0" />
+</node>
+\endverbatim
+
