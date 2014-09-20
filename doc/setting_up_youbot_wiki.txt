@@ -1,0 +1,105 @@
+Hands on real youbot arm
+
+Pre-requisites:
+    If the pre-requisites are already completed then you can directly go to step 3.
+
+Step 1: ROS-hydro must be already installed.
+
+Step 2: ROS workspace should be setup. 
+    Give suitable name to ROS workspace root directory. e.g. foundation@course_ws
+    Set up the default environment variable. Source them in bashrc script.
+
+If everything is fine then go ahead and follow the next steps. 
+
+Step 3: 
+    Clone required repositories for youbot into source directory(foundation@course_ws/src/) 
+    of your ROS workspace or create a direcory(e.g. youbot-control) in source 
+    directory  and clone inside there.
+
+        git@github.com:mas-group/youbot_description.git
+        git@github.com:mas-group/youbot_driver_ros_interface.git
+        git@github.com:mas-group/youbot_driver.git
+
+        or if someone still have problem with ssh keys then clone using these:
+
+        https://github.com/mas-group/youbot_description.git
+        https://github.com/mas-group/youbot_driver_ros_interface.git
+        https://github.com/mas-group/youbot_driver.git
+
+Step 4: 
+    After cloning, navigate to root directory of your workspace and compile.
+
+        roscd && cd ..
+
+        catkin_make
+
+    Note: During compilation a window will popup that will ask for password to enter.
+    Then you need to enter your sudo password.
+
+Step 5: 
+    If you are only connecting with real arm then you need to do changes in two files.
+
+    First edit the youbot-manipulator.cfg:
+        Navigate to /youbot_driver/config/ from command line.
+
+            roscd youbot_driver/config/
+
+        and edit:
+
+            nano youbot-manipulator.cfg
+
+        change the sequence number of the joints. After editing joint sequence look like this:
+
+            ManipulatorJoint1 = 1
+            ManipulatorJoint2 = 2
+            ManipulatorJoint3 = 3
+            ManipulatorJoint4 = 4
+            ManipulatorJoint5 = 5
+
+    Secondly, edit youbot_driver.launch:
+
+        Naviage to youbot_driver_ros_interface/launch/ from command line.
+
+            roscd youbot_driver_ros_interface/launch/
+
+        and edit:
+
+            nano youbot_driver.launch
+
+        and change the youBotHasBase parameter value to false. After editing, the line should look like this:
+
+            <param name="youBotHasBase" type="bool" value="false"/>
+
+Steps 6 and 7 needs to be done with real youbot.
+
+Step 6: 
+    Connect youbot arm with your pc/laptop using ethernet connection.
+    Connect power to the arm. 
+    The arm switch on/off button light will become red. 
+    Press this button to power the motors.The light will become green.
+        Caution: Do not move the joints of the arm manually when the light is green otherwise the joint can broke.
+    Connect an ethernet cable between arm and your pc/laptop.
+        Configure your ethernet IP address manully and give some constant IP address.e.g.
+            IP: 192.168.0.1 , SubnetMask: 255.255.255.0
+
+        Now connect with the ethernet.
+
+Step 7: 
+    Prepare to bringup youbot arm.
+        Open the terminal.Execute the following command.
+            roslaunch youbot_driver_ros_interface youbot_driver.launch
+
+            Note: this command will initilize the arm and rotate all joints to zero position. 
+            If you get error related to joint x can not be initilized. Then turn off the arm by 
+            pressing switch on/off button and rotate the arm joints manually. It is recommended to rotate the joints near to zero position to initilize faster before switching
+            on the arm.
+
+        if everything goes well with the launch, then you are ready to control the arm joints.
+
+Cheers :-)
+
+
+
+
+
+
