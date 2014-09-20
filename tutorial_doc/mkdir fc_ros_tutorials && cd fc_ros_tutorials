@@ -1,0 +1,36 @@
+mkdir fc_ros_tutorials && cd fc_ros_tutorials
+catkin_create_pkg tutorial_ros_nodes roscpp rospy
+
+
+structure of the packages:
+
+package_name
+    common                   (Framework independent files)
+        config               (config files)
+        include
+            package_name     (c/c++ header files)
+        src                    (c/c++ source files)
+            package_name_ros   (python source files)
+        tests                  (unit tests)
+        tools                  (small helper programs)
+    ros                      (ROS dependent files)
+        config               (config files)
+        msgs                 (custom messages)
+        srvs                 (custom services)
+        launch               (launch files for projects)
+        include
+            package_name     (c/c++ header files)
+        scripts              (python node files, non-exported python files)
+        src                    (c/c++ source files)
+            package_name_ros   (python source files)
+        tests                  (unit-/ROS-/integration tests)
+        tools                  (small helper programs)
+
+demo_ros_packages
+
+Understanding ROS Nodes
+demo_simple_nodes
+demo_publisher_subscriber
+demo_server_client
+demo_tf
+demo_

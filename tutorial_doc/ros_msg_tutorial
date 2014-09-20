@@ -1,0 +1,71 @@
+ROS messages and types:
+sources:
+
+http://wiki.ros.org/msg
+what is message?
+ROS uses a simplified messages description language for describing the data values (aka messages) that ROS nodes publish. 
+
+This description makes it easy for ROS tools to automatically generate source code for the message type in several target languages.
+
+Message descriptions are stored in .msg files in the msg/ subdirectory of a ROS package.
+
+There are two parts to a .msg file: fields and constants.
+Fields are the data that is sent inside of the message.
+Constants define useful values that can be used to interpret those fields (e.g. enum-like constants for an integer value).
+
+Message types are referred to using package resource names. For example, the file geometry_msgs/msg/Twist.msg is commonly referred to as geometry_msgs/Twist. 
+
+
+Command-line Tools:
+rosmsg prints out message definition information and can find source files that use a message type. 
+
+Message Description Specification:
+The format of this language is simple: a message description is a list of data field descriptions and constant definitions on separate lines. 
+
+
+
+Message consists of fields name and field values/constants
+fields consists of fieldtype and field name
+int32 x
+int32 y
+
+http://wiki.ros.org/std_msgs
+Standard ROS Messages including common message types representing primitive data types and other basic message constructs, such as multiarrays.
+
+Bool
+Byte
+ByteMultiArray
+Char
+ColorRGBA
+Duration
+Empty
+Float32
+Float32MultiArray
+Float64
+Float64MultiArray
+Header
+Int16
+Int16MultiArray
+Int32
+Int32MultiArray
+Int64
+Int64MultiArray
+Int8
+Int8MultiArray
+MultiArrayDimension
+MultiArrayLayout
+String
+Time
+UInt16
+UInt16MultiArray
+UInt32
+UInt32MultiArray
+UInt64
+UInt64MultiArray
+UInt8
+UInt8MultiArray
+
+http://wiki.ros.org/common_msgs?distro=hydro
+For common, generic robot-specific message types
+
+

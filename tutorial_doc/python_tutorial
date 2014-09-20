@@ -1,0 +1,62 @@
+python tutorial:
+source:
+http://wiki.ros.org/PyStyleGuide
+http://effbot.org/pyfaq/what-is-init-py-used-for.htm
+
+NOTE: we strive to keep ROS-specific code separate from reusable, generic code. The separation of 'node files' and files you place in src/packagename helps encourage this. 
+
+What is __init__.py used for?
+
+Files named __init__.py are used to mark directories on disk as a Python package directories. If you have the files
+
+mydir/spam/__init__.py
+mydir/spam/module.py
+
+and mydir is on your path, you can import the code in module.py as:
+
+import spam.module
+
+or
+
+from spam import module
+
+If you remove the __init__.py file, Python will no longer look for submodules inside that directory, so attempts to import the module will fail.The __init__.py file is usually empty.
+
+
+Coding Style
+
+Python code should follow PEP 8. PEP 8 is not a strict style guide and values readability over consistency, so just try to be smart. A quick summary of PEP 8 is:
+
+    package_name
+
+    ClassName
+
+    method_name
+
+    field_name
+
+    _private_something
+
+    self.__really_private_field
+
+    _global
+    4 space indentation 
+
+Package/Module Names(__init__.py files) or place of source files:
+
+	All python code must be placed within a module namespace.
+
+	ROS exports your Python source directory to be on the path of any of your dependencies.
+
+	This module name be the same as your ROS package name.
+
+
+Node Files:
+	The name of a node type is the same as its executable name.
+
+	For python files, this means including #!/usr/bin/env python at the top 
+	of your main script, and having the main script's name == node's name.
+
+	If your node is simple, this script may contain the entire code for it. 
+	Otherwise, the node file will likely do an import packagename and invoke code there.
+
