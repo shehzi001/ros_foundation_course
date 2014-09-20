@@ -6,7 +6,12 @@
  **/
 
 #include <ros/ros.h>
-
+#include <std_msgs/String.h>
+#include <std_msgs/Bool.h>
+#include <geometry_msgs/Point.h>
+#include <geometry_msgs/PointStamped.h>
+#include <geometry_msgs/Pose.h>
+#include <geometry_msgs/Twist.h>
 class DemoClass
 {
     public:
@@ -16,6 +21,7 @@ class DemoClass
         DemoClass()
         {
             initParameters(0, 0.0);
+            
         }
 
         /**
@@ -36,9 +42,23 @@ class DemoClass
             total_sum_ = total_sum;
         }
 
+        void publish_msg()
+        {
+            
+            geometry_msgs::Twist twist;
+
+            twist.linear.x = 0.0;
+            twist.linear.y = 0.5;
+            twist.angular.z = 0.5;
+        }
+
     private:
         int number_count_;
         double total_sum_;
+        std_msgs::String event_out_msg_;
+        std_msgs::Bool node_status_;
+        geometry_msgs::Point point_msg_;
+        geometry_msgs::PointStamped point_stamped_msg_;
 };
 
 

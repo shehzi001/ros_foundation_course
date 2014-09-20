@@ -8,6 +8,7 @@
 #include <ros/ros.h>
 
 #include <std_msgs/String.h>
+#include <geometry_msgs/Twist.h>
 
 
 int main(int argc, char *argv[])
@@ -31,11 +32,15 @@ int main(int argc, char *argv[])
      * Initilizing topic and then filling the message for topic.
      */
 
-    ros::Publisher string_msg_pub = nh.advertise<std_msgs::String>("event_out", 100);
+    ros::Publisher twist_msg_pub = nh.advertise<geometry_msgs::Twist>("/cmd_vel", 100);
 
     std_msgs::String event_message;
 
     event_message.data = "hello";
+
+    geometry_msgs::Twist twist_msg;
+
+    twist_msg.angular.z = 0.5;
 
     /*
      * Declaring and initilizing loop frequency.
@@ -48,7 +53,7 @@ int main(int argc, char *argv[])
      **/
      ROS_INFO("Press Cntrl+c to kill the node.");
     while(ros::ok()) {
-        string_msg_pub.publish(event_message);
+        twist_msg_pub.publish(twist_msg);
         ros::spinOnce();
         loop_rate.sleep();
     }

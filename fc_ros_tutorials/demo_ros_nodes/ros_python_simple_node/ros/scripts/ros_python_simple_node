@@ -13,6 +13,7 @@ def initlize_node():
     '''
     rospy.init_node('ros_python_simple_node', anonymous=False)
     rospy.loginfo("ros_python_simple_node is now running")
+
     rospy.spin()
 
 if __name__ == '__main__':

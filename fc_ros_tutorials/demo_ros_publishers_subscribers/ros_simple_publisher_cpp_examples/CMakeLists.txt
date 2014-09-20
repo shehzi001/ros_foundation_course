@@ -4,12 +4,14 @@ project(ros_simple_publisher_cpp_examples)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
+  geometry_msgs
 )
 
 catkin_package(
   CATKIN_DEPENDS
     roscpp
     std_msgs
+    geometry_msgs
 )
 
 include_directories(

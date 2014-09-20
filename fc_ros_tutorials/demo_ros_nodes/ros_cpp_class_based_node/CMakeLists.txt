@@ -3,9 +3,16 @@ project(ros_cpp_class_based_node)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+  std_msgs
+  geometry_msgs
 )
 
-catkin_package()
+catkin_package(
+  CATKIN_DEPENDS 
+    roscpp 
+    std_msgs 
+    geometry_msgs
+)
 
 include_directories(
   ${catkin_INCLUDE_DIRS}

@@ -33,12 +33,14 @@ class DemoClass
         /**
          * Ctor.
          */
-        virtual ~DemoClass();
+        ~DemoClass();
 
         /**
          * prepare example ros messages.
          */
         void prepareAndPublishMsgs();
+
+    private:
         void prepareAndPublishGeometryMsg();
         void prepareAndPublishActionlibMsg();
         void prepareAndPublishOdometryMsg();

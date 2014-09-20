@@ -7,8 +7,8 @@ find_package(catkin REQUIRED COMPONENTS
 
 catkin_package()
 
-add_executable(ros_cpp_simple_node ros/src/ros_cpp_simple_node.cpp)
+add_executable(ros_cpp_simple ros/src/ros_cpp_simple_node.cpp)
 
-target_link_libraries(ros_cpp_simple_node
+target_link_libraries(ros_cpp_simple
    ${catkin_LIBRARIES}
 )

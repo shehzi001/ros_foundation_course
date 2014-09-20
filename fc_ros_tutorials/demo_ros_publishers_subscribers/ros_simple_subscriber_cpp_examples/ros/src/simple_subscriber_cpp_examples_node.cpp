@@ -9,7 +9,7 @@
 
 
 
-void eventInCB(const std_msgs::String::ConstPtr& msg)
+void eventInCB(const std_msgs::String::ConstPtr &msg)
 {
     ROS_INFO_STREAM("eventInCB message:" << msg->data);
 }
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     /**
      * Initilization of private node handle
      **/
-    ros::NodeHandle nh("~");
+    ros::NodeHandle nh;
     
     /**
      * Printing Information message on the console.

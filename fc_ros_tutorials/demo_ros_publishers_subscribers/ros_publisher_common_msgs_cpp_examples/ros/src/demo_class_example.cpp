@@ -13,7 +13,7 @@ DemoClass::DemoClass(const ros::NodeHandle &nh):
         
     point_msg_pub_ = nh_.advertise<geometry_msgs::Point>("point", 100);
     pointstamped_msg_pub_ = nh_.advertise<geometry_msgs::PointStamped>("stamped_point", 100);
-    twist_msg_pub_ = nh_.advertise<geometry_msgs::Twist>("twist", 100);
+    twist_msg_pub_ = nh_.advertise<geometry_msgs::Twist>("/cmd_vel", 100);
     
     /*
      * Please, prepare the topics for the following messages:
