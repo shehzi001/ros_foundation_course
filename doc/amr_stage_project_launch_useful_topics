@@ -1,0 +1,28 @@
+roscore
+roslaunch amr_stage stage.launch
+roslaunch amr_ui rviz.launch
+rosrun amr_ui teleop_console.py
+
+rostopic list
+/cmd_vel
+
+/scan_front
+/sonar_braitenberg
+/sonar_pioneer
+
+
+rosservice list 
+
+/get_rangers
+/switch_ranger
+
+rosservice call /get_rangers
+
+rosservice call /switch_ranger "name: 'scan_front'
+state: true"
+
+
+rosrun rqt_plot rqt_plot
+
+/sonar_braitenberg/ranges[0]/range
+/sonar_braitenberg/ranges[1]/range
