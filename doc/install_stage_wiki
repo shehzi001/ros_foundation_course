@@ -33,6 +33,14 @@ Step 5: Now the stage is Installed in /usr/local or /opt/ros/hydro in Stage-4.1.
 Step 6: Now Execute the following commands. 
 If your operating system is 32-bit then you need not to execute these commands. 
 
+
+sudo rm -rf /opt/ros/hydro/lib/libstage.so
+sudo rm -rf /opt/ros/hydro/lib/ibstage.so.4.1.1
+sudo rm -rf /opt/ros/hydro/lib64/libstage.so
+sudo rm -rf /opt/ros/hydro/lib64/ibstage.so.4.1.1
+sudo rm -rf /opt/ros/hydro/include/Stage-4.1/
+
+
 sudo rm /usr/local/lib/libstage.so 
 sudo rm /usr/local/lib/libstage.so.4.1.1
 sudo ln -s /usr/local/lib64/libstage.so.4.1.1 /usr/local/lib/libstage.so 
