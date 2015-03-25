@@ -54,11 +54,11 @@ Velocitiy Command from terminal:
 
   	safty threshold lower limit  = 0.01
 
-	ManipulatorJoint1MaxAngle = PI * (169 + 169) / 180 rad
-	ManipulatorJoint2Angle = PI * (90 + 65) / 180 rad
-	ManipulatorJoint3Angle = PI * (146 + 151) / 180 rad
-	ManipulatorJoint4Angle = PI * (102.5 + 102.5) / 180 rad
-	ManipulatorJoint5Angle = PI * (167.5 + 167.5) / 180 rad
+	ManipulatorJoint1MaxAngle = PI * (169 + 169) / 180 rad = 5.8962 rad
+	ManipulatorJoint2Angle = PI * (90 + 65) / 180 rad = 2.7038 rad
+	ManipulatorJoint3Angle = PI * (146 + 151) / 180 rad = 5.181 rad
+	ManipulatorJoint4Angle = PI * (102.5 + 102.5) / 180 rad = 3.57611
+	ManipulatorJoint5Angle = PI * (167.5 + 167.5) / 180 rad = 5.84388
 
 	ManipulatorJoint1MaxVelocity = (PI / 2.0) s^-1 rad
 	ManipulatorJoint2MaxVelocity = (PI / 2.0) s^-1 rad
