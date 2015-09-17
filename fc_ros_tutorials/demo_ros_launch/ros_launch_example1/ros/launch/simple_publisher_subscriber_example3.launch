@@ -1,0 +1,22 @@
+<launch>
+    <arg name="debug" value="True" />
+    <group if="$(arg debug)">
+        <node pkg="ros_simple_publisher_cpp_examples" name="simple_publisher_cpp_examples_node"
+                type="simple_publisher_cpp_examples" output="screen"/>
+
+        <node pkg="ros_simple_subscriber_cpp_examples" name="simple_subscriber_cpp_examples_node"
+                type="simple_subscriber_cpp_examples" output="screen" >
+            <remap from="~event_in" to="/simple_publisher_cpp_examples_node/event_out" />
+        </node>
+    </group>
+
+    <group unless="$(arg debug)">
+        <node pkg="ros_simple_publisher_python_examples" name="simple_publisher_python_examples_node"
+                type="simple_publisher_python_examples_node" output="screen"/>
+
+        <node pkg="ros_simple_subscriber_python_examples" name="simple_subscriber_python_examples_node"
+                type="simple_subscriber_python_examples_node" output="screen" >
+            <remap from="~event_in" to="/simple_publisher_python_examples_node/event_out" />
+        </node>
+    </group>        
+</launch>

@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+"""
+This script is a simple python node which imports
+source code of ros_python_example1.
+"""
+#-*- encoding: utf-8 -*-
+__author__ = 'shehzad ahmed'
+
+import ros_python_class_based_nodes_ros.class_based_python_example2
+
+if __name__ == '__main__':
+    ros_python_class_based_nodes_ros.class_based_python_example2.main()
