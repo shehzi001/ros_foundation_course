@@ -1,0 +1,34 @@
+Setting up ROS-workspace:
+
+Pre-requisites: Install ROS-Indigo
+
+Step 1: Open comamnd line terminal.
+
+Step 2: Source your ROS-ingo workspace. Edit your bashrc file. 
+  nano ~/.bashrc
+  source /opt/ros/indigo/setup.bash
+
+save changes in file and exit.
+
+Step 3: Create directories and navigate to src folder 
+  mkdir -p ~/ros_ws/indigo/foundation_course_ws/src/ && cd ~/ros_ws/indigo/foundation_course_ws/src/
+
+Step 4: Initiliaze your Custom ROS workspace. 
+  catkin_init_workspace
+
+Step 5: Go to the root directory of the workspace and compile using catkin_make
+  cd ~/ros_ws/indigo/foundation_course_ws/
+  catkin_make
+
+Step 6: Compilation process will create two directories(devel and build) under ~/ros_ws/indigo/foundation_course_ws/
+
+Step 7: Now edit your custom workspace in .bashrc file. 
+  nano ~/.bashrc
+  #source /opt/ros/indigo/setup.bash
+  source ~/ros_ws/indigo/foundation_course_ws/devel/setup.bash
+  
+  save changes in file and exit.
+Step 8:
+  source ~/.bashrc (close the terminal and open again)
+
+
