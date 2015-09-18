@@ -56,13 +56,11 @@ add_definitions(-Wno-deprecated)
 
 #...: stage
 find_path(STAGE_INCLUDE_DIR stage.hh
- /usr/local/include/Stage-4.1/
+ /opt/ros/indigo/include/Stage-4.1/
 )
 find_library(STAGE_LIBRARY stage
-  /usr/local/lib64
-  /usr/local/lib
-  /usr/local/Stage-4.1/
-  /usr/local/lib64/Stage-4.1/
+  /opt/ros/indigo/lib64/
+  /opt/ros/indigo/lib/
 )
 
 if(NOT STAGE_INCLUDE_DIR OR NOT STAGE_LIBRARY)
