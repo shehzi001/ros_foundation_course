@@ -1,0 +1,16 @@
+# Goal message
+# List of poses to visit
+nav_msgs/Path path
+# Proceed to the next pose if the current pose is unreachable
+bool skip_unreachable
+---
+# Result message
+# List of flags (each corresponds to a pose in the path), describes whether a
+# particular pose was visited or skipped
+bool[] visited
+---
+# Feedback message, sent upon completion of each path segment
+# End point of the completed segment
+geometry_msgs/PoseStamped pose
+# Whether or not the end pose was reached
+bool reached

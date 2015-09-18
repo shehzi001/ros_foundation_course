@@ -1,0 +1,12 @@
+# Array of cones
+amr_msgs/Cone[] cones
+# Threshold for occupancy test
+# Cells in OccupancyGrid message with values greater or equal than the threshold
+# will be considered as occupied
+int8 threshold
+---
+# When there are no occupied points an a cone, the distance is assumed
+# to be positive infinity, and point coordinates are quiet NaNs.
+# Note: z coordinates of the points will be left uninitialized.
+geometry_msgs/Point[] points
+float64[] distances
