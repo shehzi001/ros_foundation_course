@@ -1,2 +1,0 @@
-geometry_msgs/Vector3 vector_position
-geometry_msgs/Point point_position

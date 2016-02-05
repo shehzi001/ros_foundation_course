@@ -1,5 +1,0 @@
-geometry_msgs/Pose2D pose_goal
----
-std_msgs/Bool current_pose_valid
----
-std_msgs/Bool goal_reached

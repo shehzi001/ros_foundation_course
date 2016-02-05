@@ -1,5 +1,0 @@
-#request
-std_msgs/String node_name
----
-#response
-std_msgs/Int32 node_id

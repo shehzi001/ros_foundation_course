@@ -1,5 +1,0 @@
-#!/usr/bin/env python
-import ros_python_example1_node_ros.ros_python_example1
-
-if __name__ == '__main__':
-    ros_python_example1_node_ros.ros_python_example1.main()

@@ -1,4 +1,0 @@
-std_msgs/String node_name
----
-std_msgs/Int32 node_id
-
