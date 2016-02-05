@@ -15,9 +15,8 @@ def initlize_node():
     rospy.init_node('simple_client_python_example_node', anonymous=False)
     rospy.loginfo("simple_client_python_example_node is now running")
 
-    rospy.wait_for_service('node_info_query')
-
     try:
+        rospy.wait_for_service('node_info_query', timeout=1.0)
         node_info_service = rospy.ServiceProxy('node_info_query', NodeInfoQuery)
         req = NodeInfoQueryRequest()
         req.node_name.data = "simple_client_python_example_node"
