@@ -23,7 +23,7 @@ def initlize_node():
 
     rospy.sleep(10.)
 
-    d = rospy.Duration(10, 0)
+    d = rospy.Duration(10.0)
     rospy.sleep(d)
 
     r = rospy.Rate(10) # 10hz
